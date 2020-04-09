@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "TextInputLayout with a loading indicator"
-date:   2020-04-04 15:40:10 +0200
-categories: android
+date:   2019-08-04 15:40:10 +0200
+tags: android
 ---
 
 We have a screen where the user enters their address through a list of dropdown menus: **State**, **City**, and **District**.
@@ -13,12 +13,12 @@ The request may take a considerable time to finish so we would like to show a lo
 We use `TextInputLayout` throughout the app which supports a wide variety of end icon modes:
 
 <p align="center">
-  <img src="/assets/images/none.png" width="40%" height="40%" />
-  <img src="/assets/images/password_toggle.png" width="40%" height="40%" /> 
-  <img src="/assets/images/error.png" width="40%" height="40%" />
-  <img src="/assets/images/clear_text.png" width="40%" height="40%" />
-  <img src="/assets/images/dropdown_menu.png" width="40%" height="40%" />
-  <img src="/assets/images/custom.png" width="40%" height="40%" />
+  <img src="/assets/images/text_input_layout/none.png" width="40%" height="40%" />
+  <img src="/assets/images/text_input_layout/password_toggle.png" width="40%" height="40%" /> 
+  <img src="/assets/images/text_input_layout/error.png" width="40%" height="40%" />
+  <img src="/assets/images/text_input_layout/clear_text.png" width="40%" height="40%" />
+  <img src="/assets/images/text_input_layout/dropdown_menu.png" width="40%" height="40%" />
+  <img src="/assets/images/text_input_layout/custom.png" width="40%" height="40%" />
 </p>
 
 Naturally, using the end icon to display our loading indicator seems like a perfect fit.
@@ -29,15 +29,10 @@ textInputLayout.endIconMode = TextInputLayout.END_ICON_CUSTOM
 textInputLayout.endIconDrawable = customDrawable
 ```
 
-But it turns out that with a loading indicator it is not as simple as one would think.
+But it turns out that with a loading indicator it is not as simple as one would think...
 
-<br>
-
----
-
-<br>
-
-# Drawable
+	
+## Drawable
 
 Right away, the first problem is getting hold of a loading indicator drawable.
 
@@ -113,13 +108,15 @@ layout.setEndIconTintList(states)
 drawable.setTintList(states)
 ```
 
-Ultimately we are presented with a nice little spinning indicator
+# Result
+
+Ultimately, we are presented with a nice little spinning indicator. Hey there, buddy!
 
 <p align="center">
-  <img src="/assets/images/loading_indicator.png" width="90%" height="90%" />
+  <img src="/assets/images/text_input_layout/loading_indicator.png" width="90%" height="90%" />
 </p>
 
-See [this repository][github-repo] with sample implementation.
+See [this repository][github-repo] for fully implementated project.
 
 [1]: https://developer.android.com/reference/android/graphics/drawable/Drawable.ConstantState
 [github-repo]: https://github.com/Antimonit/Loading-Indicator
