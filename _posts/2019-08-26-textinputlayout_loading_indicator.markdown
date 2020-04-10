@@ -30,20 +30,18 @@ textInputLayout.endIconDrawable = customDrawable
 ```
 
 But it turns out that with a loading indicator it is not as simple as one would think...
-
 	
 ## Drawable
 
-Right away, the first problem is getting hold of a loading indicator drawable.
+Right away, the first problem is getting hold of a loading indicator drawable. There are several ways how to tackle the problem. Some better than the others, let's have a look.
 
-## Bad option 1
+### Bad option 1
 
 There is no public drawable resource we can use for a loading indicator.
 
 There is `android.R.drawable.progress_medium_material` but it is marked private and cannot be resolved in code. Copying the resource and all of its dependent private resources totals into about 6 files (2 drawables + 2 animators + 2 interpolators). That could work but feels quite like a hack. 
 
-
-## Bad option 2
+### Bad option 2
 
 We can use `ProgressBar` to retrieve its `indeterminateDrawable`. The problem with this approach is that the drawable is closely tied to the `ProgressBar`. The indicator is animated only when the `ProgressBar` is visible, tinting one View will also tint the indicator in the other View and probably additional weird behavior.
 
@@ -53,7 +51,7 @@ What actually worked to decouple the drawable from the `ProgressBar` was a call 
 
 Anyway, this still feels like a hack.
 
-## Good option
+### Good option
 
 Although the drawable resource is marked private we can resolve certain theme attributes to get the system's default loading indicator drawable. The theme defines `progressBarStyle` attribute that references style for `ProgressBar`. Inside of this style is `indeterminateDrawable` attribute that references themed drawable. In code we can resolve the drawable like this:
 
@@ -71,7 +69,7 @@ fun Context.getProgressBarDrawable(): Drawable {
 ```
 Great, now we have a native loading indicator drawable without hacks!
 
-# Animation
+## Animation
 
 Now if you plug in the drawable into this code 
 ```kotlin
@@ -88,7 +86,7 @@ Fortunately for us, we can type it as `Animatable` and `start()` it:
 (drawable as? Animatable)?.start()
 ```
 
-# Colors
+## Colors
 
 Another unexpected behavior happens when `TextInputLayout` receives/loses focus. At such moments it will tint the drawable according to colors defined by `layout.setEndIconTintList()`. If you don't explicitly specify a tint list, it will tint the drawable to `?colorPrimary`. But at the moment when we set the drawable, it is still tinted to `?colorAccent` and at a seemingly random moment it will change color.
 
@@ -108,7 +106,7 @@ layout.setEndIconTintList(states)
 drawable.setTintList(states)
 ```
 
-# Result
+## Result
 
 Ultimately, we are presented with a nice little spinning indicator. Hey there, buddy!
 
@@ -116,7 +114,7 @@ Ultimately, we are presented with a nice little spinning indicator. Hey there, b
   <img src="/assets/images/text_input_layout/loading_indicator.png" width="90%" height="90%" />
 </p>
 
-See [this repository][github-repo] for fully implementated project.
+See [this project][github-repo] for full implementation.
 
 [1]: https://developer.android.com/reference/android/graphics/drawable/Drawable.ConstantState
 [github-repo]: https://github.com/Antimonit/Loading-Indicator
