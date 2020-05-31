@@ -1,5 +1,7 @@
 body {
   background-color: white;
+
+  
 }
 
 .site-header {
@@ -14,3 +16,21 @@ body {
   color: white;
 }
 
+/**
+ * Tables
+ */
+table.code_samples  {
+  border: 0px solid $grey-color-light;
+  margin-bottom: 0px;
+  tr {
+    &:nth-child(even) {
+      background-color: transparent;
+    }
+  }
+  th {
+    border: 0px solid darken($grey-color-light, 4%);
+  }
+  td {
+    border: 0px solid $grey-color-light;
+  }
+}
