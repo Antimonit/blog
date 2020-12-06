@@ -19,11 +19,11 @@
 title: David Khol
 email: david@khol.me
 description: >- # this means to ignore newlines until "baseurl:"
-  A blog about programming, writing cleaner code and becoming a better person.
+  A blog about writing cleaner code, best programming practices, Android and Gradle.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-linkedin_username: khol
-github_username:  antimonit
+
+# social network links are configured in antimonit/_includes/social.html
 
 # Build settings
 theme: minima
