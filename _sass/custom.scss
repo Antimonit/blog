@@ -1,7 +1,5 @@
 body {
   background-color: white;
-
-  
 }
 
 .site-header {
@@ -33,4 +31,76 @@ table.code_samples  {
   td {
     border: 0px solid $grey-color-light;
   }
+}
+
+table {
+  tr {
+    td:first-child {
+      padding-left: 0px;
+    }
+    td:last-child {
+      padding-right: 0px;
+    }
+  }
+
+  th, td {
+    padding: ($spacing-unit / 8) ($spacing-unit / 3);
+  }
+}
+
+div.highlighter-rouge {
+  position: relative;
+}
+
+div[file-name] div.highlight pre::before {
+  // content: "/buildSrc/src/main/kotlin/accessors.kt";
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  // border: 10px solid #f282f2;
+}
+
+div.highlighter-rouge[data-rel]::before {
+  content: attr(data-rel);
+  // absolute position is relative to the closest parent with position attribute set
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  border-bottom: 0px solid #FFFFFF3f;
+  border-left: 0px solid #FFFFFF3f;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  min-width: 40px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  color: #eeaa44;
+}
+
+div.highlighter-rouge[data-filename] div.highlight {
+  padding-top: 12px;
+}
+
+div.highlighter-rouge[data-filename] {
+  margin-top: 24px;
+}
+
+div.highlighter-rouge[data-filename]::before {
+  content: attr(data-filename);
+  // absolute position is relative to the closest parent with position attribute set
+  position: absolute;
+  top: -12px;
+  left: 12px;
+  height: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 5px;
+  border: 1px solid #0000003f;
+  min-width: 40px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  margin: auto;
+  background-color: #414a4e;
 }
