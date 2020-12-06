@@ -53,11 +53,9 @@ div.highlighter-rouge {
 }
 
 div[file-name] div.highlight pre::before {
-  // content: "/buildSrc/src/main/kotlin/accessors.kt";
   position: absolute;
   right: 12px;
   top: 12px;
-  // border: 10px solid #f282f2;
 }
 
 div.highlighter-rouge[data-rel]::before {
