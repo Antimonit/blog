@@ -5,6 +5,9 @@ date:   2020-10-18 18:50:00 +0900
 tags:   programming
 ---
 
+<!-- repeatOnLifecycle -->
+<!-- flowWithLifecyclee -->
+
 As of today, in late 2020, there are three major contenders when it comes to asynchronous programming on Android.
 We are talking about none other than **RxJava**, **LiveData**, and Kotlin **Coroutines**.
 
