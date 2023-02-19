@@ -53,7 +53,7 @@ Each type has a number of possible values it can represent. Let's refer to this 
 of a type. Here is a table of some primitive types and their sizes.
 
 <p align="center">
-  <object data="/assets/images/algebraic_data_types/Primitive.drawio.svg" type="image/svg+xml"></object>
+  {% include_relative algebraic_data_types/Primitive.svg %}
 </p>
 
 * The size of the `Boolean` type is **2** since it can represent only **true or false**.
@@ -91,10 +91,9 @@ but there is a lot to unpack.
 There are two fundamental ways how we can compose types together. These are represented by **Product
 types** and **Sum types**.
 
-<p align="center">
-    <object data="/assets/images/algebraic_data_types/ADT.drawio.svg" type="image/svg+xml"></object>
-</p>
-
+<figure align="center">
+  {% include_relative algebraic_data_types/ADT.svg %}
+</figure>
 
 <style type="text/css" rel="stylesheet">
 .adt_columns_box {
@@ -115,7 +114,7 @@ types** and **Sum types**.
 
 <div class="adt_columns_box">
   <p align="center">
-    <object data="/assets/images/algebraic_data_types/Sum.drawio.svg" type="image/svg+xml"></object>
+    {% include_relative algebraic_data_types/Sum.svg %}
   </p>
 
 <div markdown="1">
@@ -138,7 +137,7 @@ The size of a `State` is 3 since it can represent **3** values—`initial`, `loa
 
 <div class="adt_columns_box">
   <p align="center">
-    <object data="/assets/images/algebraic_data_types/Product.drawio.svg" type="image/svg+xml"></object>
+    {% include_relative algebraic_data_types/Product.svg %}
   </p>
 
 <div markdown="1">
@@ -190,7 +189,7 @@ concrete but also abstract types.
 ### Abstract sum types
 </div>
   <div>
-    <object data="/assets/images/algebraic_data_types/Abstract Sum.drawio.svg" type="image/svg+xml"></object>
+    {% include_relative algebraic_data_types/Abstract_Sum.svg %}
   </div>
 </div>
 
@@ -200,7 +199,7 @@ concrete but also abstract types.
 ### Abstract product types
 </div>
   <div>
-    <object data="/assets/images/algebraic_data_types/Abstract Product.drawio.svg" type="image/svg+xml"></object>
+    {% include_relative algebraic_data_types/Abstract_Product.svg %}
   </div>
 </div>
 
@@ -216,7 +215,7 @@ thus `Optional<Boolean>` has a size of **3**, while `Optional<Byte>` has a size 
 Finally, we can also combine sum types and product types to represent other complex types.
 
 <p align="center">
-  <object data="/assets/images/algebraic_data_types/Notification.drawio.svg" type="image/svg+xml"></object>
+  {% include_relative algebraic_data_types/Notification.svg %}
 </p>
 
 <div class="admonition tip" markdown="1">
@@ -227,13 +226,13 @@ can be seen as a form of Sum and Product types as well.
 They can be regarded as **Sum types**, each simply enumerating their values:
 
 <div>
-  <object data="/assets/images/algebraic_data_types/Primitive Sum.drawio.svg" type="image/svg+xml"></object>
+  {% include_relative algebraic_data_types/Primitive_Sum.svg %}
 </div>
 
 Or alternatively as **Product types**, representing how they are physically stored in memory:
 
 <div>
-  <object data="/assets/images/algebraic_data_types/Primitive Product.drawio.svg" type="image/svg+xml"></object>
+  {% include_relative algebraic_data_types/Primitive_Product.svg %}
 </div>
 
 </div>
@@ -305,7 +304,7 @@ For example, the concept of [isomorphism] (as applied to [graphs][graph isomorph
 or [groups][group isomorphism], for example) applies to ADTs as well.
 
 <p align="center">
-  <object data="/assets/images/algebraic_data_types/Graph Isomorphism.drawio.svg" type="image/svg+xml"></object>
+  {% include_relative algebraic_data_types/Graph_Isomorphism.svg %}
 </p>
 
 Two types (graphs, groups, ...) are [isomorphic] if there is a [bijection] between the two types 
@@ -316,7 +315,7 @@ What this means in practice is that we can, for example, substitute a **Sum type
 elements with a **Boolean type**.
 
 <p align="center">
-  <object data="/assets/images/algebraic_data_types/State Isomorphism.drawio.svg" type="image/svg+xml"></object>
+  {% include_relative algebraic_data_types/State_Isomorphism.svg %}
 </p>
 
 Of course, **State** and **Boolean** types are not equal. Passing one into a function that expects
@@ -420,7 +419,7 @@ For example, the **multiplicative associativity** rule tells us that the followi
 isomorphic.
 
 <p align="center">
-  <object data="/assets/images/algebraic_data_types/Pair Pair Isomorphism.drawio.svg" type="image/svg+xml"></object>
+  {% include_relative algebraic_data_types/Pair_Pair_Isomorphism.svg %}
 </p>
 
 Indeed, with a bit of refactoring, one type can be replaced with the other one since both types have
@@ -444,7 +443,7 @@ These types fit very nicely into the algebra of ADTs!
 * The `Nothing` type can be used to represent the additive identity.
 
 <p align="center">
-  <object data="/assets/images/algebraic_data_types/Identities.drawio.svg" type="image/svg+xml"></object>
+  {% include_relative algebraic_data_types/Identities.svg %}
 </p>
 
 <div class="admonition tip" markdown="1">
@@ -545,7 +544,7 @@ Now that we learned that the `Unit` type has a **size of 1** and the `Nothing` t
 0**, let's define a few more isomorphisms.
 
 <p align="center">
-  <object data="/assets/images/algebraic_data_types/Type Isomorphisms.drawio.svg" type="image/svg+xml"></object>
+  {% include_relative algebraic_data_types/Type_Isomorphisms.svg %}
 </p>
 
 The list of examples here is not exhaustive as there are infinitely many more isomorphisms.
@@ -593,7 +592,7 @@ time checks.
 It is not uncommon to represent a network response with a structure similar to the following.
 
 <p align="center">
-  <object data="/assets/images/algebraic_data_types/Response Naive.drawio.svg" type="image/svg+xml"></object>
+  {% include_relative algebraic_data_types/Response_Naive.svg %}
 </p>
 
 Every network response will always contain `code` and `message` meanwhile `exception` and `data`
@@ -611,7 +610,7 @@ achieved using a sum type. But what about the other two pieces of data—`code` 
 model this either as a **sum** of **product** types or a **product** of **sum** types.
 
 <p align="center">
-  <object data="/assets/images/algebraic_data_types/Response ADT.drawio.svg" type="image/svg+xml"></object>
+  {% include_relative algebraic_data_types/Response_ADT.svg %}
 </p>
 
 By applying the **distributive property**, we can actually convert one into the other. Both types
@@ -645,7 +644,7 @@ We got a rough list of requirements what the widget should be able to do, and so
 in a `TextFieldState` type.
 
 <p align="center">
-  <object data="/assets/images/algebraic_data_types/TextFieldState Naive.drawio.svg" type="image/svg+xml"></object>
+  {% include_relative algebraic_data_types/TextFieldState_Naive.svg %}
 </p>
 
 Unfortunately, some combinations of these attributes above are not valid.
@@ -660,7 +659,7 @@ Unfortunately, some combinations of these attributes above are not valid.
 Can we do better?
 
 <p align="center">
-  <object data="/assets/images/algebraic_data_types/TextFieldState ADT.drawio.svg" type="image/svg+xml"></object>
+  {% include_relative algebraic_data_types/TextFieldState_ADT.svg %}
 </p>
 
 Notice that wherever we previously had a Boolean (`isEditable`, `isStrikethrough`, `isMasked`), now
@@ -852,7 +851,7 @@ We can make use of the fact that any implementation of a `List` is isomorphic to
 `Node` or an `Empty` object, symbolizing the end of the chain.
 
 <p align="center">
-  <object data="/assets/images/algebraic_data_types/LinkedList.drawio.svg" type="image/svg+xml"></object>
+  {% include_relative algebraic_data_types/LinkedList.svg %}
 </p>
 
 In ADT terms, `LinkedList` is a Sum type of either `Empty` or `Node` types. Since there are only two
@@ -861,7 +860,7 @@ types to choose from, the `Node` type represents a list that is **not** `Empty`�
 Let's rename the `Node` to a `NonEmptyList` and represent the `Empty` state using an `Optional<T>`.
 
 <p align="center">
-  <object data="/assets/images/algebraic_data_types/NonEmptyList.drawio.svg" type="image/svg+xml"></object>
+  {% include_relative algebraic_data_types/NonEmptyList.svg %}
 </p>
 
 This structure is still isomorphic to a `List` but allows us to narrow the type to a `NonEmptyList`
