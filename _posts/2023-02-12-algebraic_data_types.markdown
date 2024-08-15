@@ -5,34 +5,6 @@ date:   2023-02-12 18:32:00 +0900
 tags:   programming
 ---
 
-<style>
-.admonition {
-    border-width: 0.05rem;
-    border-style: solid;
-    border-radius: 0.4rem;
-    display: flow-root;
-    font-size: .875rem;
-    margin: 1.5625em 0;
-    padding: 1rem;
-    page-break-inside: avoid;
-}
-.admonition > :last-child {
-    margin-bottom: 0;
-}
-.hint {
-    border-color: #448aff;
-    background-color: #448aff1a;
-}
-.tip {
-    border-color: #00c853;
-    background-color: #00c8531a;
-}
-.note {
-    border-color: #ff9100;
-    background-color: #ff91001a;
-}
-</style>
-
 **Algebraic Data Types** are the bread and butter of many functional languages. In languages such as
 Haskell, there are no classes or inheritance. Haskell does not even have a `null` value. The absence
 of a value is expressed through ADTs. You could probably even say that Haskell's type system _is_

@@ -1,0 +1,34 @@
+.admonition {
+    border-width: 0.05rem;
+    border-style: solid;
+    border-radius: 0.4rem;
+    display: flow-root;
+    font-size: .875rem;
+    margin: 1.5625em 0;
+    padding: 1rem;
+    page-break-inside: avoid;
+
+    &.hint {
+        border-color: #086ddd00;
+        background-color: #086ddd1a;
+    }
+    &.tip {
+        border-color: #00bfbc00;
+        background-color: #00bfbc1a;
+    }
+    &.note {
+        border-color: #ec750000;
+        background-color: #ec75001a;
+    }
+    &.warning {
+        border-color: #ec750000;
+        background-color: #ec75001a;
+    }
+    &.info {
+        border-color: #086ddd00;
+        background-color: #086ddd1a;
+    }
+}
+.admonition > :last-child {
+    margin-bottom: 0;
+}
